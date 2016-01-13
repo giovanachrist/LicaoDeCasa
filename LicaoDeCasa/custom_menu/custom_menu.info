@@ -1,0 +1,9 @@
+name = "Custom Menu"
+description = "Exercício 1.2 na licao de casa"
+package = "Licao de casa"
+core = "6.x"
+version = "5.x-1.0"
+files[] = custom_menu.module
+files[] = custom_menu.install
+files[] = custom_menu.admin.inc
+configure=admin/config/system/custom_menu/settings

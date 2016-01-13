@@ -1,0 +1,39 @@
+<?php/**
+* @file
+* Exercicio 1.2 na licao de casa
+*
+* Adds some funcions and configurations
+* to help developers in some process.
+*/
+
+/**
+* Implementation of hook_menu().
+*/
+
+function custom_menu_menu() {
+	$items['hello'] = array(
+    'title' => 'Hello world!222',
+    'page callback' => 'helloworld_page',
+    'access callback' => TRUE,
+  );
+
+	$items['foo/bar'] = array(
+    // page title
+    'title' => 'Page Title',
+    // describe the page for the menu system.  site visitors will not see this
+    'description' => 'Simple custom hook_menu() implementation.',
+    // function that is called when visiting the new path
+    'page callback' => 'my_page_function',
+    // permissions required to view page
+    'access arguments' => array('access content'),
+  );  
+
+  return $items;
+}
+
+/**
+ * Page callback for /hello.
+ */
+function helloworld_page() {
+  return 'Hello world!222';
+}
