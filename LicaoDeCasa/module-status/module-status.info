@@ -1,0 +1,4 @@
+name = Module-Status
+description = Verifica status, tipo e view de um node.
+core = 6.x 
+package = Bloco-Hello,Chuva!

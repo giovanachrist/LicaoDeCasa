@@ -1,0 +1,15 @@
+<?php/**
+* @file
+* Exercicio 2 na licao de casa
+*
+* verifica o status de um node
+* são 3h16 da manhã
+*/
+
+/** * Implements hook_view() */
+
+function hook_view ($type, $status, $view_mode){
+	if ($view_mode == 'full' && $type == 'article' && $status == 0) {
+		drupal_set_message(t("Este artigo é um rascunho."), 'status');
+	}
+}
