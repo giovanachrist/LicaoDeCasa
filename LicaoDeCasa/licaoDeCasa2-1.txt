@@ -1,0 +1,43 @@
+A funcao t() serve tanto para traduzir os textos que serao mostrados aos usuarios para a linguagem apropriada de seu computador, quanto para reconhecer quais textos precisam ser traduzidos e coloca-los em um banco de dados de textos a serem traduzidos.
+
+Os parametros sao essenciais nessa funcao pois eh por meio deles em que a string em ingles sera passada para funcao, para ser devolvida traduzida, o array de substituicoes depois da traducao, e outras opcoes, como o contexto, sao passados por parametros, tornando-os essenciais para o funcionamento.
+
+Um contexto na funcao t() visa resolver alguns problemas de algumas palavras que possuem mais de um significado, dependendo de onde estao inseridas.
+Devemos usar quando sabemos qual o sentido que nossa palavra deve ter. Exemplo a palavra em ingles `Scale` que pode ser colocada no contexto `Numero de digitos`.
+Existe uma lista de contextos no Drupal 7 e outros podem ser pedidos.
+
+//1
+
+//2
+
+//3
+
+//4 -> a funcao t() nao detecta strings concatenadas com . , nao se deve usar.
+t("See all posts in !category", array('!category' => $category);
+
+//5
+
+//6 -> o primeiro parametro deve ser uma frase necessariamente em ingles. Repete o problema da 5
+---IGUAL O 5----
+
+//7 -> quando eh uma mensagem para ser exibida ao usuario, deve-se usar @ nas variaveis
+t('Get in touch with <em>@user</em>', array('@user' => format_username($account)));
+
+//8-> essa palavra, por poder assumir varios significados, precisa de um contexto
+print t('Order', array(), array('context' => 'Verb'));
+
+//9-> a barra nao sera reconhecida
+t("Don\'t click here");
+
+//10 -> a funcao t() nunca deve receber uma variavel como parametro, a nao ser que essa mensagem ja tenha passado por outra t()
+$message = t(`Please, try again`)
+
+//11 -> aqui, marcacoes de `pula linha` seriam adicionados a cada quebra de linha, deixando espacos em branco no texto.
+t('You may have typed something wrong when filling in your credit card information. Please, make sure you are using the correct credit card and try again.'); [tudo na mesma linha]
+
+//12
+
+//13
+
+//14 -> os textos ficarao com grandes espacos em branco desnecessarios
+t('Please review your order. If you need to fix any information click on the yellow edit buttons. Then, click on the button below to generate your boleto.');
