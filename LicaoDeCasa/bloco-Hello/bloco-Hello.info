@@ -1,0 +1,4 @@
+name = Bloco-Hello 
+description = Diz ola para todos os chuvosos!
+core = 6.x 
+package = Bloco-Hello,Chuva!

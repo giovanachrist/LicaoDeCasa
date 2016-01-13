@@ -1,0 +1,35 @@
+<?php/**
+* @file
+* Exercicio 1.4 na licao de casa
+*
+* Adds some funcions and configurations
+* to help developers in some process.
+*/
+
+/** * Implements hook_block_info() */ 
+
+function blocoHello_block_info() { // um primeiro bloco 
+
+$blocks['umbloco'] = array( 
+	'info' => 'Descrição do bloco, como aparece em admin/structure/block', 
+	'cache' => DRUPAL_NO_CACHE, // esse bloco não pode ser cacheado. Ele vai rodar SEMPRE ); 
+
+	return $blocks; 
+}
+
+/**
+* Implements hook_block_view()
+*/
+function blocoHello_block_view($delta = '') {
+	$block = array();
+
+	switch ($delta) {
+		case 'umbloco':
+			$block['subject'] = 'Hello Chuva!';
+			$block['content'] = blocoHello_umbloco();
+		break;
+	}
+	return $block;
+}
+
+?>
