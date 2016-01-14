@@ -1,17 +1,41 @@
-1.
+1. O primeiro é uma instância da classe array, enquanto o segundo é um tipo array.
 
-2. Porque como o usu�rio tem a possibilidade de escolher os valores de �ndices, tem a liberdade de decidir se vai come�ar seu array no 0 ou no 1.
+2. Porque como o usuário tem a possibilidade de escolher os valores de índices, tem a liberdade de decidir se vai começar seu array no 0 ou no 1.
 
-2a.
+2a. Arrays em javascript sempre tem index com números (não é vetor associativo como php).
 
-3. Para pegar o valor do primeiro elemento do array, precisamos utilizar a fun��o reset($array), passando o array como par�metro ela retorna o primeiro elemento. Se as chaves forem desconhecidas, a fun��o tamb�m funciona.
+3. Para pegar o valor do primeiro elemento do array, precisamos utilizar a função reset($array), passando o array como parâmetro ela retorna o primeiro elemento. Se as chaves forem desconhecidas, a função também funciona.
 
-4.
+4. Usando a função array_values();
 
-5.
+5. Usando primeiro a função array_flip() e depois array_values().
 
-6.
+6. 
+sort() -> ordena pelos valores, mas não preserva as chaves
+['mistura' => 'bife'
+'suco' => 'laranja'
+'fruta' => 'morango']
 
-7.
+assort() -> ordena o vetor pelos seus valores
+['mistura' => 'bife'
+'suco' => 'laranja'
+'fruta' => 'morango']
 
-8.
+ksort() -> ordena o vetor por suas chaves
+['fruta' => 'morango'
+'mistura' => 'bife'
+'suco' => 'laranja']
+
+arsort() -> faz a ordenação por valor, como o arsort mas inverido
+['fruta' => 'morango'
+'suco' => 'laranja'
+'mistura' => 'bife']
+
+ksort() -> ordenação por chave como o ksort, mas inverso
+['suco' => 'laranja'
+'mistura' => 'bife'
+'fruta' => 'morango']
+
+7. Um exemplo de uso para a função usort() é quando temos um vetor de alunos, com chave de RA e precisamos organizá-los. Passando uma simples função de comparação por parâmetro, usort() organiza esse vetor.
+
+8. A função array_search().
