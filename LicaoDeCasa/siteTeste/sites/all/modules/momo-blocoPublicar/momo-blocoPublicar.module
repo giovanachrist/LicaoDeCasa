@@ -1,0 +1,28 @@
+<? php
+
+/**
+ * Implements hook_block_view().
+ */
+function momo_block_view($delta = '', $node, $block) {
+  $block = array();
+  switch ($delta) {
+    case 'momo-blocoPublicar':
+      if($node->type = 'arcticle' || $node->type = 'story') {
+        $block['content'] = '<form action= chamaBotao() method=get ><input type=submit value='Publicar' /></form>';
+        if($node->status = 0) {
+          echo "<form action= chamaBotao(".$node.") method=get ><input type=submit value='Publicar' /></form>\n";
+        }
+      }
+  }
+  return $block;
+}
+
+function chamaBotao($node) {
+  if($node->status = 0) {   
+    $node->status = 1;
+    $node->save($node);
+    $_SERVER['REQUEST_URI'];  //redireciona
+  }
+}
+
+?>

@@ -1,0 +1,4 @@
+name = Bloco-Botao-Publicar
+description = Tem botão que publica ou despublica node tipo artigo/story e salva.
+core = 6.x 
+package = Bloco-Hello,Chuva!

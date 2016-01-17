@@ -1,0 +1,13 @@
+<?php
+
+/** * Implements hook_node_view() */
+
+function statusNode_node_view ($node, $view_mode = 'full', $langcode = NULL){
+    if ($node->type == 'article' || $node->type == 'story') {
+    	if($node->status == 0) {
+        	drupal_set_message("Este artigo é um rascunho.", 'status');
+        }
+    }
+   }
+
+?>

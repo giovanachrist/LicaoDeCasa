@@ -1,0 +1,4 @@
+name = momo-blocoPublicar
+description = Botao FUNCIONA
+core = 7.x 
+package = Bloco-Hello,Chuva!

@@ -1,0 +1,4 @@
+name = statusNode
+description = Verifica status, tipo e view de um node oi.
+core = 7.x
+package = Hello,Chuva!

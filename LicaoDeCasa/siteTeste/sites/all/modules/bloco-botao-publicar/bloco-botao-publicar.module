@@ -1,0 +1,63 @@
+<?php
+
+/**
+* Implements hook_block_view()
+*/
+function blocoHello_block_view($delta = '', $type, $status, $view_mode, &$form, $form_state, $form_id, $node) {
+	if($type == 'arcticle' || $type == 'story') {
+		if($view_mode == 'full') {
+			botao_form_alter(&$form, $form_state, $form_id, $node, $status);
+		}
+	}
+
+
+}
+
+function botao_form_alter(&$form, $form_state, $form_id, $status){
+
+	if($status == 0)
+		$value = "Publicar";
+	else
+		$value = "Despublicar";
+
+
+	$form['buttons']['novo']= array(
+		'#type' => 'submit',
+        //nome do botão
+        '#value' =>$value,
+        //Peso (posição) do botão
+        '#weight'=> 5,
+        //Explicita uma função adicional a ser chamada quando o formulario for enviado
+        //a função node_form_submit é default para botões "enviar"
+        //a função meumodulo_novo_item é customizada para redirecionar o usuário
+        '#submit'=> array('node_form_submit','alterar'),
+        '#post'=> array(),
+        '#programmed'=>FALSE,
+        '#tree'=>FALSE,
+        '#parents'=>array('novo'),
+        '#array_parents'=>array('buttons','novo'),
+        '#processed'=> TRUE,
+        '#description'=> NULL,
+        '#attributes' => array(),
+        '#required'=> FALSE,
+        '#input'=> TRUE,
+        '#name'=> 'btnPublicar',
+        '#button_type'=>'submit',
+        '#executes_submit_callback'=> TRUE,
+        '#process' => array('form_expand_ahah'),
+        '#id'=> 'edit-novo',
+        '#defaults_loaded'=>TRUE,
+        '#sorted'=>TRUE
+    );
+}
+
+function alterar($node, $status) {
+	if($status == 0)
+		$status = 1;
+	else
+		$status = 0;
+
+	node_save($node);
+	$form_state['rebuild'] = TRUE;
+}
+?>
