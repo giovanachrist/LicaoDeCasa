@@ -1,0 +1,13 @@
+1. (?) Como o DOM ainda não vai ter sido criado, é bem provável que o navegador apresente algum problema ou até quebre. O drupal.behaviors() solucionaria esse problema por poder colocar funções antes do .ready().
+
+2.
+
+3. Drupal.attachBehaviors(newLine);
+
+4.
+
+5.
+
+6. Quando o código é encapsulado assim significa que está dando um "extends" em uma função já existente naquele namespace ou que você está criando sua própria função que poderá ser chamada dentro daquele namespace (no caso, jQuery). 
+
+7. Quando var é usado antes da instanciação de uma variável, significa que ela é local (variável de escopo) e não pode ser usada em um nível mais alto do que ela foi criada.
