@@ -1,10 +1,24 @@
-1. (?) Como o DOM ainda não vai ter sido criado, é bem provável que o navegador apresente algum problema ou até quebre. O drupal.behaviors() solucionaria esse problema por poder colocar funções antes do .ready().
+1. (???????) Como o DOM ainda não vai ter sido criado, é bem provável que o navegador apresente algum problema ou até quebre. O drupal.behaviors() solucionaria esse problema por poder colocar funções no contexto da página.
 
-2.
+2. ????????????
 
 3. Drupal.attachBehaviors(newLine);
 
-4.
+4. (function ($) {
+  Drupal.behaviors.mAdd-Remove = {
+    attach: function (context, settings) {
+	    $('.add').click(function() {
+		    var $newLine = $('<tr><td>0</td><td><a class="btn btn-danger btn-xs remove" href="#">X</a></td></tr>');
+		    $newLine.appendTo('#table-numbers > tbody');
+		    Drupal.attachBehaviors(newLine);
+	  	});
+
+	    $('.remove').click(function() {
+	    	$(this).parents('tr').remove();
+	  	});
+    }
+  };
+})(jQuery);
 
 5.
 
