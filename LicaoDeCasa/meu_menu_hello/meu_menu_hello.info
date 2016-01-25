@@ -1,0 +1,4 @@
+name = meu_menu_hello
+description = Menu
+core = 7.x 
+package = Bloco-Hello,Chuva!
