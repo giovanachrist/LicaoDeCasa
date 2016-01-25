@@ -1,0 +1,6 @@
+name = random_numbers_table
+description = Constrói uma tabela de números aleatórios
+core = 7.x 
+package = Bloco-Hello,Chuva!
+
+scripts[] = random_numbers_table.js
